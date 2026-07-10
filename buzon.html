@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buzón — Toma de Ramos</title>
+
+<!-- ============================================================= -->
+<!--  PEGA AQUÍ la URL de tu Apps Script (paso 3 de las           -->
+<!--  instrucciones). Mientras diga PEGA_AQUI no guardará nada.    -->
+<!-- ============================================================= -->
+<script>
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx4soHL6auyO2RxEVwLnuflHW7u0R4db0XGyfAcaGeKR-YjvwXM0QxvYu5xplpyjtyrow/exec";
+</script>
+
+<style>
+  *{box-sizing:border-box;}
+  body{
+    margin:0;background:#fff;color:#1a1a1a;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    font-size:16px;line-height:1.55;
+  }
+  .wrap{max-width:560px;margin:0 auto;padding:32px 20px 60px;}
+  h1{font-size:24px;font-weight:700;margin:0 0 4px;}
+  .bajada{color:#444;margin:0 0 24px;font-size:15px;}
+  .back{display:inline-block;margin-bottom:18px;color:#1e4b8f;text-decoration:none;font-size:14px;}
+  .back:hover{text-decoration:underline;}
+  label{display:block;font-weight:600;font-size:14px;margin:16px 0 5px;}
+  .req{color:#c0392b;}
+  input,select,textarea{
+    width:100%;padding:9px 11px;font-family:inherit;font-size:15px;color:#1a1a1a;
+    border:1px solid #ccc;border-radius:6px;background:#fff;
+  }
+  input:focus,select:focus,textarea:focus{outline:none;border-color:#1e4b8f;}
+  textarea{min-height:96px;resize:vertical;}
+  button{
+    margin-top:22px;background:#1e4b8f;color:#fff;border:none;font-weight:600;
+    font-size:15px;padding:11px 22px;border-radius:6px;cursor:pointer;
+  }
+  button:hover{background:#173a6e;}
+  button:disabled{background:#9aa;cursor:default;}
+  .msg{margin-top:18px;padding:14px 16px;border-radius:6px;font-size:15px;display:none;}
+  .msg.ok{display:block;background:#e8f3ea;border:1px solid #bcd9c2;color:#1e5b2e;}
+  .msg.err{display:block;background:#fbeaea;border:1px solid #e2b6b6;color:#8a2a16;}
+  footer{margin-top:34px;color:#888;font-size:13px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back" href="./">← Volver a las preguntas frecuentes</a>
+  <h1>Buzón — Toma de Ramos</h1>
+  <p class="bajada">Cuéntanos tu problema y te respondemos. Mientras más completo, más rápido podemos ayudarte.</p>
+
+  <form id="form">
+    <label>Nombre completo <span class="req">*</span></label>
+    <input type="text" name="nombre" required>
+
+    <label>Correo @miuandes.cl <span class="req">*</span></label>
+    <input type="email" name="correo" required>
+
+    <label>Especialidad</label>
+    <select name="especialidad">
+      <option value="">— Selecciona —</option>
+      <option>Plan Común</option>
+      <option>Industrial</option>
+      <option>Computación</option>
+      <option>Eléctrica</option>
+      <option>Obras Civiles</option>
+      <option>Química</option>
+      <option>Ambiental</option>
+      <option>Otra</option>
+    </select>
+
+    <label>Año de ingreso a la carrera</label>
+    <input type="text" name="anio" placeholder="Ej: 2024">
+
+    <label>Prioridad asignada</label>
+    <input type="text" name="prioridad" placeholder="Ej: 3ra">
+
+    <label>Plan de estudio</label>
+    <select name="plan">
+      <option value="">— Selecciona —</option>
+      <option>PE 2026</option>
+      <option>PE 2025</option>
+      <option>PE 2023</option>
+      <option>PE 2022</option>
+      <option>PE 2020</option>
+      <option>Otro / no sé</option>
+    </select>
+
+    <label>Tipo de problema</label>
+    <select name="tipo">
+      <option value="">— Selecciona —</option>
+      <option>Error de proyección / NRC no válido (malla PE2026)</option>
+      <option>No pude mandar la solicitud especial</option>
+      <option>Sección cerrada / sin cupo</option>
+      <option>Tope de horario</option>
+      <option>No pude entrar / se cayó el sistema</option>
+      <option>Restricción de campo de estudio / especialidad</option>
+      <option>Créditos (faltan o quiero exceso)</option>
+      <option>Otro</option>
+    </select>
+
+    <label>Ramo y NRC (si aplica)</label>
+    <input type="text" name="ramo" placeholder="Ej: Pensamiento Algorítmico Aplicado — 7557">
+
+    <label>Describe qué pasó <span class="req">*</span></label>
+    <textarea name="descripcion" required></textarea>
+
+    <button type="submit" id="btn">Enviar</button>
+  </form>
+
+  <div class="msg" id="msg"></div>
+
+  <footer>Asesoramiento Académico · Ingeniería</footer>
+
+</div>
+
+<script>
+(function(){
+  const form = document.getElementById('form');
+  const btn  = document.getElementById('btn');
+  const msg  = document.getElementById('msg');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    if(SCRIPT_URL.indexOf("PEGA_AQUI") === 0){
+      msg.className = 'msg err';
+      msg.textContent = 'El formulario aún no está conectado (falta pegar la URL del Apps Script).';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Enviando…';
+
+    const fd = new FormData(form);
+    const params = new URLSearchParams();
+    for(const [k,v] of fd.entries()) params.append(k, v);
+
+    fetch(SCRIPT_URL, { method:'POST', mode:'no-cors', body: params })
+      .then(function(){
+        form.reset();
+        msg.className = 'msg ok';
+        msg.textContent = '¡Listo! Recibimos tu mensaje. Te responderemos por correo.';
+        btn.disabled = false;
+        btn.textContent = 'Enviar';
+      })
+      .catch(function(){
+        msg.className = 'msg err';
+        msg.textContent = 'Hubo un problema al enviar. Intenta de nuevo o escríbenos por correo.';
+        btn.disabled = false;
+        btn.textContent = 'Enviar';
+      });
+  });
+})();
+</script>
+</body>
+</html>
