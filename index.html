@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toma de Ramos — Preguntas Frecuentes</title>
+
+<!-- ============================================================= -->
+<!--  EDITA SOLO ESTE BLOQUE                                        -->
+<!--  1. Actualiza el periodo y las fechas cada toma de ramos.     -->
+<!--  2. Pega el link del Google Form (el que ya usan) en buzonUrl.-->
+<!--  3. Revisa las respuestas marcadas [REVISAR]: son problemas   -->
+<!--     de sistema donde el documento oficial no da solución;     -->
+<!--     confírmalas con la Facultad y borra la marca.             -->
+<!--  Las respuestas de política salen del documento oficial de    -->
+<!--  Criterios para la Evaluación de Excepciones.                 -->
+<!-- ============================================================= -->
+<script>
+const CONFIG = {
+  titulo: "Toma de Ramos — Preguntas Frecuentes",
+  periodo: "2026-20",                              // ← actualízalo cada semestre
+  bajada: "Revisa acá antes de escribirnos. Si tu duda no está, mándala por el formulario al final.",
+  fechasSolicitud: "las fechas que indica la Facultad",
+  fechaApelacion: "la fecha límite indicada por la Facultad",
+  buzonUrl: "buzon.html",                          // ← el formulario del buzón
+  contacto: "asesoramiento.cdi@gmail.com"
+};
+
+const FAQ = [
+  // ---------- Si se cayó la toma o no puedes entrar ----------
+  {
+    cat: "Si se cayó la toma o no puedes entrar",
+    q: "La página no carga, se cae o me cerró la sesión",
+    a: "No cierres la pestaña ni cierres sesión. Espera unos segundos y recarga: el sistema se satura al abrir cada bloque de prioridad y suele volver solo. Si se te cerró la sesión, vuelve a entrar; los ramos que ya inscribiste quedan guardados, no partes de cero. Saca una captura de lo que llevas inscrito y de cualquier error (con la hora visible) por si necesitas reclamar después."
+  },
+  {
+    cat: "Si se cayó la toma o no puedes entrar",
+    q: "No pude inscribir un ramo por la caída del sistema",
+    a: "Si por la caída no alcanzaste a inscribir un ramo que te correspondía, escríbenos por el formulario con tu captura y la hora en que ocurrió. Documentado, se puede gestionar una apelación."
+  },
+
+  // ---------- Malla PE2026 / proyecciones ----------
+  {
+    cat: "Malla PE2026 / proyecciones",
+    q: "Me sale “el NRC no es válido para las proyecciones” y es un ramo que me toca por malla",
+    a: "Es el error más común de este periodo y casi siempre aparece con ramos nuevos del PE2026 (Pensamiento Algorítmico Aplicado, Taller de IA, Métodos Numéricos HI y otras herramientas interdisciplinarias). Primero verifica que hiciste el cambio de malla al PE2026 si te corresponde, porque el sistema proyecta según tu plan vigente. Si ya estás en el PE2026 y el ramo igual no carga con ninguna sección, es un problema de proyección del sistema: repórtalo por el formulario con tu especialidad, el nombre del ramo y los NRC que intentaste. [REVISAR con la Facultad el canal exacto.]"
+  },
+  {
+    cat: "Malla PE2026 / proyecciones",
+    q: "Hice el cambio al PE2026 pero solo me deja inscribir ramos de la malla antigua",
+    a: "Si aprobaste el cambio de malla pero el sistema solo te ofrece los NRC del plan anterior, repórtalo por el formulario indicando tu plan actual y el ramo nuevo que no aparece. Mientras tanto, no fuerces la inscripción con NRC del plan que ya no es el tuyo. [REVISAR con la Facultad.]"
+  },
+  {
+    cat: "Malla PE2026 / proyecciones",
+    q: "No me aparecen las nuevas concentraciones o herramientas interdisciplinarias",
+    a: "Si tu concentración o herramienta interdisciplinaria del PE2026 no figura en las proyecciones, repórtalo por el formulario con tu especialidad y la concentración que elegiste, para que la Facultad revise tu proyección. [REVISAR con la Facultad.]"
+  },
+
+  // ---------- Solicitudes especiales ----------
+  {
+    cat: "Solicitudes especiales",
+    q: "¿Cómo y cuándo se manda una solicitud especial?",
+    a: "Todas las solicitudes de cursos de la Facultad se hacen por Banner, en el módulo “Toma de Ramos”, dentro de " + CONFIG.fechasSolicitud + ". Cada tipo lleva un comentario distinto: “TOPE DE HORARIO”, “CUPO”, “EXCESO DE CRÉDITOS” o “ALUMNO DE ÚLTIMO AÑO”. Las solicitudes enviadas por otros medios o fuera de fecha se rechazan."
+  },
+  {
+    cat: "Solicitudes especiales",
+    q: "No me aparece la opción de mandar la solicitud especial",
+    a: "Fue el problema más reportado. Asegúrate de estar en el módulo correcto (“Toma de Ramos” en Banner) y dentro de las fechas. Si aun así no te aparece la opción, escríbenos por el formulario con el detalle (ramo, NRC y qué tipo de solicitud querías hacer). [REVISAR con la Facultad la vía cuando el módulo no muestra la opción.]"
+  },
+  {
+    cat: "Solicitudes especiales",
+    q: "¿En cuánto tiempo responden una solicitud?",
+    a: "Las respuestas llegan por Banner, después de la toma de ramos. El plazo es variable y depende de la cantidad y complejidad de las solicitudes recibidas, así que no esperes respuesta inmediata."
+  },
+
+  // ---------- Topes de horario ----------
+  {
+    cat: "Topes de horario",
+    q: "¿Qué topes de horario puedo pedir?",
+    a: "Solo se pueden solicitar topes en estos casos: entre ayudantías, clase con ayudantía, laboratorio con ayudantía, laboratorio con clase, o entre laboratorios. No se aceptan topes entre dos clases, ni ninguno que involucre evaluaciones (pruebas o exámenes). La aprobación no está garantizada y pueden rechazarla sin apelación."
+  },
+  {
+    cat: "Topes de horario",
+    q: "¿Qué requisitos necesito para pedir un tope?",
+    a: "Cuatro: no haber reprobado asignaturas el semestre anterior; tener aprobados los requisitos del curso; no exceder los 33 créditos inscritos (salvo que tengas PGAG de 5,30 o superior); y solo puedes pedir un tope por alumno. Se envía por Banner con el comentario “TOPE DE HORARIO”."
+  },
+  {
+    cat: "Topes de horario",
+    q: "Me marca tope con un bloque que en realidad es un examen",
+    a: "Los topes que involucran evaluaciones no se autorizan. Pero si el sistema está tomando un bloque de examen como si fuera clase por error, es un tema de sistema: repórtalo por el formulario con los dos ramos y el bloque afectado. [REVISAR con la Facultad.]"
+  },
+
+  // ---------- Cupos y secciones ----------
+  {
+    cat: "Cupos y secciones",
+    q: "El ramo me sale como sección cerrada o sin cupos",
+    a: "Puedes presentar una solicitud por Banner con el comentario “CUPO”. Dos cosas: si el curso tiene otra sección con cupo en un horario compatible con tu toma, la solicitud no se acoge; y si se abren cupos nuevos, se asignan por prioridad académica. La Facultad se reserva el derecho de abrir cupos o no."
+  },
+  {
+    cat: "Cupos y secciones",
+    q: "La sección aparece cerrada pero sé que hay cupos",
+    a: "Algunos alumnos reportaron secciones que figuran cerradas aunque tengan cupo (pasó con Termodinámica). Repórtalo por el formulario con el ramo y el NRC, y deja igual tu solicitud de “CUPO” por Banner como respaldo. [REVISAR con la Facultad.]"
+  },
+
+  // ---------- Créditos ----------
+  {
+    cat: "Créditos",
+    q: "Quiero tomar más de 33 créditos, ¿se puede?",
+    a: "Sí, se puede pedir aumentar la carga hasta un máximo de 36 créditos si cumples dos requisitos: haber aprobado todos los cursos del último año académico (dos semestres consecutivos) y tener aprobados los requisitos del curso. Considera la carga real: cada crédito equivale a unas 1,7 horas semanales, así que 36 créditos son cerca de 61 horas a la semana. Se pide por Banner con el comentario “EXCESO DE CRÉDITOS”."
+  },
+  {
+    cat: "Créditos",
+    q: "Tomé todos mis ramos pero me salen menos créditos de los permitidos",
+    a: "Revisa primero que agregaste todas las asignaturas que te corresponden por malla en tu semestre (a veces falta una herramienta o un ramo de concentración). Si ya están todas y el sistema igual muestra menos créditos de los exigidos, escríbenos por el formulario. [REVISAR con la Facultad.]"
+  },
+
+  // ---------- Último año ----------
+  {
+    cat: "Último año",
+    q: "Soy de último año y necesito un ramo que no me deja inscribir",
+    a: "Las solicitudes de alumnos de último año se revisan con mayor flexibilidad. Se considera último año cuando tienes la licenciatura aprobada y te faltan hasta 64 créditos del área de titulación, realizables en dos semestres consecutivos (sin contar la última práctica). Se pide por Banner con el comentario “ALUMNO DE ÚLTIMO AÑO”."
+  },
+
+  // ---------- Prioridad y acceso ----------
+  {
+    cat: "Prioridad y acceso",
+    q: "No aparece mi prioridad o siento que no se respetó",
+    a: "La prioridad se asigna por criterios académicos y define a qué hora abre tu bloque de toma. Si no aparece o crees que hubo un error, repórtalo por el formulario con tu especialidad y una captura. [REVISAR con la Facultad.]"
+  },
+  {
+    cat: "Prioridad y acceso",
+    q: "No me deja entrar a Banner por una deuda, retención o problema de clave",
+    a: "Eso no lo levanta la Facultad. Una deuda de matrícula se ve con Finanzas; una retención o problema de clave, con Registro Académico o Soporte. Resuélvelo antes de tu bloque de toma, porque mientras esté activo no te deja inscribir."
+  },
+  {
+    cat: "Prioridad y acceso",
+    q: "No me deja tomar un ramo por “restricción de campo de estudio” o de especialidad",
+    a: "Suele pasar cuando el sistema no reconoce tu mención o especialidad para un ramo que sí te corresponde. Repórtalo por el formulario con tu especialidad, el ramo y el NRC. [REVISAR con la Facultad.]"
+  },
+
+  // ---------- Qué no amerita excepción ----------
+  {
+    cat: "Qué no amerita excepción",
+    q: "¿Qué motivos NO se aceptan como excepción?",
+    a: "La Facultad no considera estos fundamentos: un supuesto tope entre cursos del mismo semestre (garantizan que los cursos de un mismo semestre de la malla no se topan, al menos en una de sus secciones); “tenía planificado tomar este curso para salir”; “ya lo hice y lo reprobé”; y “me genera atraso en los siguientes semestres”. Cualquier solicitud basada en fundamentos fuera de los criterios se rechaza."
+  },
+  {
+    cat: "Qué no amerita excepción",
+    q: "Ya pasó la toma y quedé mal, ¿puedo apelar?",
+    a: "Sí. Las apelaciones se presentan por Banner, en el módulo “Comunicación Alumno Facultad” (categoría “Toma de Ramos”), hasta " + CONFIG.fechaApelacion + ". Debes enviar una solicitud por cada curso, completando los campos requeridos."
+  }
+];
+</script>
+<!-- ============================================================= -->
+<!--  FIN DEL BLOQUE EDITABLE                                       -->
+<!-- ============================================================= -->
+
+<style>
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:#fff;
+    color:#1a1a1a;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    font-size:16px;
+    line-height:1.55;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:32px 20px 60px;}
+  h1{font-size:26px;font-weight:700;margin:0 0 4px;}
+  .periodo{color:#666;font-size:14px;margin:0 0 14px;}
+  .bajada{color:#444;margin:0 0 28px;}
+
+  h2{
+    font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;
+    color:#1e4b8f;margin:30px 0 8px;padding-bottom:6px;border-bottom:1px solid #e2e2e2;
+  }
+
+  details{border-bottom:1px solid #ececec;}
+  summary{
+    cursor:pointer;padding:12px 24px 12px 0;font-weight:600;font-size:15.5px;
+    position:relative;list-style:none;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{
+    content:"+";position:absolute;right:2px;top:11px;font-size:20px;font-weight:400;color:#999;
+  }
+  details[open] summary::after{content:"–";}
+  summary:hover{color:#1e4b8f;}
+  summary:focus-visible{outline:2px solid #1e4b8f;outline-offset:2px;}
+  .answer{padding:0 0 14px;color:#444;font-size:15px;}
+
+  .buzon{
+    margin-top:40px;padding:22px 20px;border:1px solid #e2e2e2;border-radius:8px;background:#fafafa;
+  }
+  .buzon h2{margin-top:0;border:none;padding:0;}
+  .buzon p{margin:0 0 14px;color:#444;font-size:15px;}
+  .buzon a.btn{
+    display:inline-block;background:#1e4b8f;color:#fff;text-decoration:none;font-weight:600;
+    font-size:15px;padding:10px 20px;border-radius:6px;
+  }
+  .buzon a.btn:hover{background:#173a6e;}
+  .buzon .alt{margin:12px 0 0;font-size:13.5px;color:#666;}
+  .buzon .alt a{color:#1e4b8f;}
+
+  footer{margin-top:36px;color:#888;font-size:13px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1 id="titulo"></h1>
+  <p class="periodo" id="periodo"></p>
+  <p class="bajada" id="bajada"></p>
+
+  <div id="faq"></div>
+
+  <div class="buzon">
+    <h2>¿No encontraste tu duda?</h2>
+    <p>Mándanosla por el formulario y te respondemos. Nos ayuda a sumar la pregunta acá.</p>
+    <a class="btn" id="buzon-btn" href="#" target="_blank" rel="noopener">Ir al formulario</a>
+    <p class="alt">¿Caso urgente? Escríbenos a <a id="mail-link" href="#"></a></p>
+  </div>
+
+  <footer>Asesoramiento Académico · Ingeniería</footer>
+
+</div>
+
+<script>
+(function(){
+  document.getElementById('titulo').textContent = CONFIG.titulo;
+  document.getElementById('periodo').textContent = "Periodo " + CONFIG.periodo;
+  document.getElementById('bajada').textContent = CONFIG.bajada;
+
+  const buzonBtn = document.getElementById('buzon-btn');
+  buzonBtn.href = CONFIG.buzonUrl;
+  if(CONFIG.buzonUrl === "#"){
+    buzonBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      alert("Falta pegar el link del Google Form en CONFIG.buzonUrl (arriba del archivo).");
+    });
+  }
+  const mail = document.getElementById('mail-link');
+  mail.textContent = CONFIG.contacto;
+  const asunto = "Duda toma de ramos " + CONFIG.periodo;
+  const cuerpo = [
+    "Nombre:",
+    "Correo:",
+    "Especialidad:",
+    "Prioridad:",
+    "Plan de estudio (PE):",
+    "Ramo y NRC:",
+    "",
+    "Qué pasó (descríbelo):"
+  ].join("\n");
+  mail.href = "mailto:" + CONFIG.contacto + "?subject=" + encodeURIComponent(asunto) + "&body=" + encodeURIComponent(cuerpo);
+
+  // Agrupar preguntas por categoría, en el orden en que aparecen
+  const faqEl = document.getElementById('faq');
+  const orden = [];
+  const grupos = {};
+  FAQ.forEach(function(item){
+    if(!grupos[item.cat]){ grupos[item.cat] = []; orden.push(item.cat); }
+    grupos[item.cat].push(item);
+  });
+
+  orden.forEach(function(cat){
+    const h = document.createElement('h2');
+    h.textContent = cat;
+    faqEl.appendChild(h);
+
+    grupos[cat].forEach(function(item){
+      const d = document.createElement('details');
+      const s = document.createElement('summary');
+      s.textContent = item.q;
+      const a = document.createElement('div');
+      a.className = 'answer';
+      a.textContent = item.a;
+      d.appendChild(s);
+      d.appendChild(a);
+      faqEl.appendChild(d);
+    });
+  });
+})();
+</script>
+</body>
+</html>
