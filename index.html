@@ -28,7 +28,7 @@ const FAQ = [
   {
     cat: "Si se cayó la toma o no puedes entrar",
     q: "La página no carga, se cae o me cerró la sesión",
-    a: "Ten paciencia: el sistema se satura al abrir cada bloque de prioridad y suele volver solo. No cierres la pestaña, espera unos segundos y recarga. Si se te cerró la sesión, vuelve a entrar; los ramos que ya inscribiste normalmente quedan guardados. Si aun así no logras entrar o inscribir, es un tema que ve la Facultad: guarda una captura con la hora y gestiónalo con ellos."
+    a: "Ten paciencia: el sistema se satura al abrir cada bloque de prioridad y suele volver solo. No cierres la pestaña, espera unos segundos y sigue intentando; si se te cerró la sesión, vuelve a entrar (los ramos que ya inscribiste normalmente quedan guardados). Si sigues sin poder: cuando te aparezca un error, mándalo como solicitud especial; si no te aparece ninguno, escríbele un correo a la Facultad al tiro avisando que tienes un error."
   },
   {
     cat: "Si se cayó la toma o no puedes entrar",
@@ -42,27 +42,17 @@ const FAQ = [
     q: "Me sale “el NRC no es válido para las proyecciones” y es un ramo que me toca por malla",
     a: "Es el error más común de este periodo y casi siempre aparece con ramos nuevos del PE2026 (Pensamiento Algorítmico Aplicado, Taller de IA, Métodos Numéricos HI y otras herramientas interdisciplinarias). Primero verifica que hiciste el cambio de malla al PE2026 si te corresponde, porque el sistema proyecta según tu plan vigente. Si ya estás en el PE2026 y el ramo igual no carga, es un tema del sistema que resuelve la Facultad: preséntalo como solicitud especial por Banner con tu especialidad, el ramo y los NRC que intentaste."
   },
-  {
-    cat: "Malla PE2026 / proyecciones",
-    q: "Hice el cambio al PE2026 pero solo me deja inscribir ramos de la malla antigua",
-    a: "Si aprobaste el cambio de malla pero el sistema solo te ofrece los NRC del plan anterior, gestiónalo con la Facultad por Banner indicando tu plan actual y el ramo nuevo que no aparece. Mientras tanto, no fuerces la inscripción con NRC del plan que ya no es el tuyo."
-  },
-  {
-    cat: "Malla PE2026 / proyecciones",
-    q: "No me aparecen las nuevas concentraciones o herramientas interdisciplinarias",
-    a: "Si tu concentración o herramienta interdisciplinaria del PE2026 no figura en las proyecciones, preséntalo como solicitud especial por Banner (módulo “Toma de Ramos”), indicando tu especialidad y la concentración que elegiste, para que la Facultad revise tu proyección."
-  },
 
   // ---------- Solicitudes especiales ----------
   {
     cat: "Solicitudes especiales",
     q: "¿Cómo y cuándo se manda una solicitud especial?",
-    a: "Todas las solicitudes de cursos de la Facultad se hacen por Banner, en el módulo “Toma de Ramos”, dentro de " + CONFIG.fechasSolicitud + ". Cada tipo lleva un comentario distinto: “TOPE DE HORARIO”, “CUPO”, “EXCESO DE CRÉDITOS” o “ALUMNO DE ÚLTIMO AÑO”. Las solicitudes enviadas por otros medios o fuera de fecha se rechazan."
+    a: "Todas las solicitudes de cursos de la Facultad se hacen por Banner, en el módulo “Toma de Ramos”, dentro de " + CONFIG.fechasSolicitud + ". En la app, al entrar te lleva a una pantalla donde, debajo del botón “Toma de Ramos”, aparece el botón “Solicitud Especial”. Cada tipo lleva un comentario distinto: “TOPE DE HORARIO”, “CUPO”, “EXCESO DE CRÉDITOS” o “ALUMNO DE ÚLTIMO AÑO”. Las solicitudes enviadas por otros medios o fuera de fecha se rechazan."
   },
   {
     cat: "Solicitudes especiales",
     q: "No me aparece la opción de mandar la solicitud especial",
-    a: "Fue el problema más reportado. Asegúrate de estar en el módulo correcto (“Toma de Ramos” en Banner) y dentro de las fechas. Si aun así no te aparece la opción, gestiónalo con la Facultad indicando el ramo, el NRC y qué tipo de solicitud querías hacer."
+    a: "Fue el problema más reportado. Asegúrate de estar en el módulo correcto (“Toma de Ramos” en Banner) y dentro de las fechas; en la app, el botón “Solicitud Especial” está debajo del botón “Toma de Ramos”. Si aun así no te aparece la opción, escríbenos por el formulario y te guiamos."
   },
   {
     cat: "Solicitudes especiales",
@@ -100,25 +90,15 @@ const FAQ = [
     q: "Quiero tomar más de 33 créditos, ¿se puede?",
     a: "Sí, se puede pedir aumentar la carga hasta un máximo de 36 créditos si cumples dos requisitos: haber aprobado todos los cursos del último año académico (dos semestres consecutivos) y tener aprobados los requisitos del curso. Considera la carga real: cada crédito equivale a unas 1,7 horas semanales, así que 36 créditos son cerca de 61 horas a la semana. Se pide por Banner con el comentario “EXCESO DE CRÉDITOS”."
   },
-  {
-    cat: "Créditos",
-    q: "Tomé todos mis ramos pero me salen menos créditos de los permitidos",
-    a: "Revisa primero que agregaste todas las asignaturas que te corresponden por malla en tu semestre (a veces falta una herramienta o un ramo de concentración). Si ya están todas y el sistema igual muestra menos créditos de los exigidos, gestiónalo con la Facultad por Banner."
-  },
 
   // ---------- Último año ----------
   {
     cat: "Último año",
     q: "Soy de último año y necesito un ramo que no me deja inscribir",
-    a: "Las solicitudes de alumnos de último año se revisan con mayor flexibilidad. Se considera último año cuando tienes la licenciatura aprobada y te faltan hasta 64 créditos del área de titulación, realizables en dos semestres consecutivos (sin contar la última práctica). Se pide por Banner con el comentario “ALUMNO DE ÚLTIMO AÑO”."
+    a: "Las solicitudes de alumnos de último año se revisan con mayor flexibilidad. Se considera último año cuando tienes la licenciatura aprobada y te faltan hasta 64 créditos del área de titulación, realizables en dos semestres consecutivos (sin contar la última práctica). Se pide como solicitud especial: en la app, debajo del botón “Toma de Ramos”, entra a “Solicitud Especial” con el comentario “ALUMNO DE ÚLTIMO AÑO”."
   },
 
   // ---------- Prioridad y acceso ----------
-  {
-    cat: "Prioridad y acceso",
-    q: "No aparece mi prioridad o siento que no se respetó",
-    a: "La prioridad se asigna por criterios académicos y define a qué hora abre tu bloque de toma. Si no aparece o crees que hubo un error, escríbele un correo a la Facultad explicando tu caso, con tu especialidad y una captura."
-  },
   {
     cat: "Prioridad y acceso",
     q: "No me deja entrar a Banner por una deuda, retención o problema de clave",
@@ -127,7 +107,7 @@ const FAQ = [
   {
     cat: "Prioridad y acceso",
     q: "No me deja tomar un ramo por “restricción de campo de estudio” o de especialidad",
-    a: "Suele pasar cuando el sistema no reconoce tu mención o especialidad para un ramo que sí te corresponde. Gestiónalo con la Facultad por Banner (solicitud especial) con tu especialidad, el ramo y el NRC."
+    a: "Suele pasar cuando el sistema no reconoce tu mención o especialidad para un ramo que sí te corresponde. Escríbenos por el formulario para orientarte, y manda un correo a la Facultad explicando tu caso con tu especialidad, el ramo y el NRC."
   },
 
   // ---------- Qué no amerita excepción ----------
