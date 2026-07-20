@@ -8,10 +8,7 @@
 <!-- ============================================================= -->
 <!--  EDITA SOLO ESTE BLOQUE                                        -->
 <!--  1. Actualiza el periodo y las fechas cada toma de ramos.     -->
-<!--  2. Pega el link del Google Form (el que ya usan) en buzonUrl.-->
-<!--  3. Revisa las respuestas marcadas [REVISAR]: son problemas   -->
-<!--     de sistema donde el documento oficial no da solución;     -->
-<!--     confírmalas con la Facultad y borra la marca.             -->
+<!--  2. El link del formulario (buzon.html) ya está puesto.       -->
 <!--  Las respuestas de política salen del documento oficial de    -->
 <!--  Criterios para la Evaluación de Excepciones.                 -->
 <!-- ============================================================= -->
@@ -31,29 +28,29 @@ const FAQ = [
   {
     cat: "Si se cayó la toma o no puedes entrar",
     q: "La página no carga, se cae o me cerró la sesión",
-    a: "No cierres la pestaña ni cierres sesión. Espera unos segundos y recarga: el sistema se satura al abrir cada bloque de prioridad y suele volver solo. Si se te cerró la sesión, vuelve a entrar; los ramos que ya inscribiste quedan guardados, no partes de cero. Saca una captura de lo que llevas inscrito y de cualquier error (con la hora visible) por si necesitas reclamar después."
+    a: "Ten paciencia: el sistema se satura al abrir cada bloque de prioridad y suele volver solo. No cierres la pestaña, espera unos segundos y recarga. Si se te cerró la sesión, vuelve a entrar; los ramos que ya inscribiste normalmente quedan guardados. Si aun así no logras entrar o inscribir, es un tema que ve la Facultad: guarda una captura con la hora y gestiónalo con ellos."
   },
   {
     cat: "Si se cayó la toma o no puedes entrar",
     q: "No pude inscribir un ramo por la caída del sistema",
-    a: "Si por la caída no alcanzaste a inscribir un ramo que te correspondía, escríbenos por el formulario con tu captura y la hora en que ocurrió. Documentado, se puede gestionar una apelación."
+    a: "La inscripción y tu carga académica son tu responsabilidad, y la Facultad no garantiza revertir estos casos. La vía formal es una apelación por Banner (módulo “Comunicación Alumno Facultad”, categoría “Toma de Ramos”), hasta el 6 de agosto, una por curso; la Facultad la evalúa y puede rechazarla. Guarda una captura con la hora como respaldo."
   },
 
   // ---------- Malla PE2026 / proyecciones ----------
   {
     cat: "Malla PE2026 / proyecciones",
     q: "Me sale “el NRC no es válido para las proyecciones” y es un ramo que me toca por malla",
-    a: "Es el error más común de este periodo y casi siempre aparece con ramos nuevos del PE2026 (Pensamiento Algorítmico Aplicado, Taller de IA, Métodos Numéricos HI y otras herramientas interdisciplinarias). Primero verifica que hiciste el cambio de malla al PE2026 si te corresponde, porque el sistema proyecta según tu plan vigente. Si ya estás en el PE2026 y el ramo igual no carga con ninguna sección, es un problema de proyección del sistema: repórtalo por el formulario con tu especialidad, el nombre del ramo y los NRC que intentaste. [REVISAR con la Facultad el canal exacto.]"
+    a: "Es el error más común de este periodo y casi siempre aparece con ramos nuevos del PE2026 (Pensamiento Algorítmico Aplicado, Taller de IA, Métodos Numéricos HI y otras herramientas interdisciplinarias). Primero verifica que hiciste el cambio de malla al PE2026 si te corresponde, porque el sistema proyecta según tu plan vigente. Si ya estás en el PE2026 y el ramo igual no carga, es un tema del sistema que resuelve la Facultad: preséntalo como solicitud especial por Banner con tu especialidad, el ramo y los NRC que intentaste."
   },
   {
     cat: "Malla PE2026 / proyecciones",
     q: "Hice el cambio al PE2026 pero solo me deja inscribir ramos de la malla antigua",
-    a: "Si aprobaste el cambio de malla pero el sistema solo te ofrece los NRC del plan anterior, repórtalo por el formulario indicando tu plan actual y el ramo nuevo que no aparece. Mientras tanto, no fuerces la inscripción con NRC del plan que ya no es el tuyo. [REVISAR con la Facultad.]"
+    a: "Si aprobaste el cambio de malla pero el sistema solo te ofrece los NRC del plan anterior, gestiónalo con la Facultad por Banner indicando tu plan actual y el ramo nuevo que no aparece. Mientras tanto, no fuerces la inscripción con NRC del plan que ya no es el tuyo."
   },
   {
     cat: "Malla PE2026 / proyecciones",
     q: "No me aparecen las nuevas concentraciones o herramientas interdisciplinarias",
-    a: "Si tu concentración o herramienta interdisciplinaria del PE2026 no figura en las proyecciones, repórtalo por el formulario con tu especialidad y la concentración que elegiste, para que la Facultad revise tu proyección. [REVISAR con la Facultad.]"
+    a: "Si tu concentración o herramienta interdisciplinaria del PE2026 no figura en las proyecciones, preséntalo como solicitud especial por Banner (módulo “Toma de Ramos”), indicando tu especialidad y la concentración que elegiste, para que la Facultad revise tu proyección."
   },
 
   // ---------- Solicitudes especiales ----------
@@ -65,7 +62,7 @@ const FAQ = [
   {
     cat: "Solicitudes especiales",
     q: "No me aparece la opción de mandar la solicitud especial",
-    a: "Fue el problema más reportado. Asegúrate de estar en el módulo correcto (“Toma de Ramos” en Banner) y dentro de las fechas. Si aun así no te aparece la opción, escríbenos por el formulario con el detalle (ramo, NRC y qué tipo de solicitud querías hacer). [REVISAR con la Facultad la vía cuando el módulo no muestra la opción.]"
+    a: "Fue el problema más reportado. Asegúrate de estar en el módulo correcto (“Toma de Ramos” en Banner) y dentro de las fechas. Si aun así no te aparece la opción, gestiónalo con la Facultad indicando el ramo, el NRC y qué tipo de solicitud querías hacer."
   },
   {
     cat: "Solicitudes especiales",
@@ -76,18 +73,13 @@ const FAQ = [
   // ---------- Topes de horario ----------
   {
     cat: "Topes de horario",
-    q: "¿Qué topes de horario puedo pedir?",
-    a: "Solo se pueden solicitar topes en estos casos: entre ayudantías, clase con ayudantía, laboratorio con ayudantía, laboratorio con clase, o entre laboratorios. No se aceptan topes entre dos clases, ni ninguno que involucre evaluaciones (pruebas o exámenes). La aprobación no está garantizada y pueden rechazarla sin apelación."
+    q: "¿Qué topes de horario puedo pedir y cómo?",
+    a: "Solo se pueden solicitar topes en estos casos: entre ayudantías, clase con ayudantía, laboratorio con ayudantía, laboratorio con clase, o entre laboratorios. No se aceptan topes entre dos clases, ni ninguno que involucre evaluaciones (pruebas o exámenes). Se pide como solicitud especial por Banner (módulo “Toma de Ramos”), el 20 y 21 de julio, con el comentario “TOPE DE HORARIO”. La aprobación no está garantizada y pueden rechazarla sin apelación."
   },
   {
     cat: "Topes de horario",
     q: "¿Qué requisitos necesito para pedir un tope?",
     a: "Cuatro: no haber reprobado asignaturas el semestre anterior; tener aprobados los requisitos del curso; no exceder los 33 créditos inscritos (salvo que tengas PGAG de 5,30 o superior); y solo puedes pedir un tope por alumno. Se envía por Banner con el comentario “TOPE DE HORARIO”."
-  },
-  {
-    cat: "Topes de horario",
-    q: "Me marca tope con un bloque que en realidad es un examen",
-    a: "Los topes que involucran evaluaciones no se autorizan. Pero si el sistema está tomando un bloque de examen como si fuera clase por error, es un tema de sistema: repórtalo por el formulario con los dos ramos y el bloque afectado. [REVISAR con la Facultad.]"
   },
 
   // ---------- Cupos y secciones ----------
@@ -99,7 +91,7 @@ const FAQ = [
   {
     cat: "Cupos y secciones",
     q: "La sección aparece cerrada pero sé que hay cupos",
-    a: "Algunos alumnos reportaron secciones que figuran cerradas aunque tengan cupo (pasó con Termodinámica). Repórtalo por el formulario con el ramo y el NRC, y deja igual tu solicitud de “CUPO” por Banner como respaldo. [REVISAR con la Facultad.]"
+    a: "Algunos alumnos reportaron secciones que figuran cerradas aunque tengan cupo (pasó con Termodinámica). Deja tu solicitud de “CUPO” por Banner indicando el ramo y el NRC, para que la Facultad lo revise."
   },
 
   // ---------- Créditos ----------
@@ -111,7 +103,7 @@ const FAQ = [
   {
     cat: "Créditos",
     q: "Tomé todos mis ramos pero me salen menos créditos de los permitidos",
-    a: "Revisa primero que agregaste todas las asignaturas que te corresponden por malla en tu semestre (a veces falta una herramienta o un ramo de concentración). Si ya están todas y el sistema igual muestra menos créditos de los exigidos, escríbenos por el formulario. [REVISAR con la Facultad.]"
+    a: "Revisa primero que agregaste todas las asignaturas que te corresponden por malla en tu semestre (a veces falta una herramienta o un ramo de concentración). Si ya están todas y el sistema igual muestra menos créditos de los exigidos, gestiónalo con la Facultad por Banner."
   },
 
   // ---------- Último año ----------
@@ -125,7 +117,7 @@ const FAQ = [
   {
     cat: "Prioridad y acceso",
     q: "No aparece mi prioridad o siento que no se respetó",
-    a: "La prioridad se asigna por criterios académicos y define a qué hora abre tu bloque de toma. Si no aparece o crees que hubo un error, repórtalo por el formulario con tu especialidad y una captura. [REVISAR con la Facultad.]"
+    a: "La prioridad se asigna por criterios académicos y define a qué hora abre tu bloque de toma. Si no aparece o crees que hubo un error, escríbele un correo a la Facultad explicando tu caso, con tu especialidad y una captura."
   },
   {
     cat: "Prioridad y acceso",
@@ -135,7 +127,7 @@ const FAQ = [
   {
     cat: "Prioridad y acceso",
     q: "No me deja tomar un ramo por “restricción de campo de estudio” o de especialidad",
-    a: "Suele pasar cuando el sistema no reconoce tu mención o especialidad para un ramo que sí te corresponde. Repórtalo por el formulario con tu especialidad, el ramo y el NRC. [REVISAR con la Facultad.]"
+    a: "Suele pasar cuando el sistema no reconoce tu mención o especialidad para un ramo que sí te corresponde. Gestiónalo con la Facultad por Banner (solicitud especial) con tu especialidad, el ramo y el NRC."
   },
 
   // ---------- Qué no amerita excepción ----------
@@ -215,13 +207,13 @@ const FAQ = [
   <div id="faq"></div>
 
   <div class="buzon">
-    <h2>¿No encontraste tu duda?</h2>
-    <p>Mándanosla por el formulario y te respondemos. Nos ayuda a sumar la pregunta acá.</p>
-    <a class="btn" id="buzon-btn" href="#" target="_blank" rel="noopener">Ir al formulario</a>
-    <p class="alt">¿Caso urgente? Escríbenos a <a id="mail-link" href="#"></a></p>
+    <h2>¿Te quedó una duda?</h2>
+    <p>Las solicitudes y los problemas de inscripción se resuelven siempre con la Facultad, por Banner. Si te quedó una duda sobre cómo hacer una solicitud o sobre algo que le preguntaste a la Facultad, escríbenos por el formulario y te orientamos.</p>
+    <a class="btn" id="buzon-btn" href="#" target="_blank" rel="noopener">Escribir al formulario</a>
+    <p class="alt">También puedes escribirnos a <a id="mail-link" href="#"></a></p>
   </div>
 
-  <footer>Asesoramiento Académico · Ingeniería</footer>
+  <footer>Asesoramiento Académico · Ingeniería<br><br>Esta página es una guía orientativa del CDI. Ante cualquier diferencia, rige el documento oficial de Criterios para la Evaluación de Excepciones de la Facultad.</footer>
 
 </div>
 
